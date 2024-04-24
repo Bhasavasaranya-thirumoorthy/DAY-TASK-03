@@ -1,0 +1,228 @@
+                                                    //DAY TASK-03
+ //1)                                                   
+//a)Print odd numbers in an array
+//ANONYMOUS FUNCTION
+var a=[1,2,3,4]
+var b=function(){
+  var c=[]
+    for(var i=0;i<a.length;i++){
+        if(a[i]%2!=0){
+          c.push(a[i])
+        }
+    }
+    return c
+}
+console.log(b())
+
+//IIFE
+(function(){
+    var a=[1,2,3,4]
+    var c=[]
+    for(var i=0;i<a.length;i++){
+        if(a[i]%2!==0){
+            c.push(a[i])
+        }
+    }
+    console.log(c)
+})()
+
+
+//b)Convert all strings to title caps in a string array
+//ANONYMOUS FUNCTION
+var a=("welcome to guvi")
+var b=function(){
+    a=a.toLowerCase().split(" ")
+    for(var i=0;i<a.length;i++){
+        a[i]=a[i].charAt(0).toUpperCase()+a[i].slice(1)
+    }
+    return a.join(" ")
+}
+console.log(b())
+
+//IIFE
+(function(){
+    var a=("welcome to guvi")
+    a=a.toLowerCase().split(" ")
+    for(var i=0;i<a.length;i++){
+        a[i]=a[i].charAt(0).toUpperCase()+a[i].slice(1)
+    }
+    console.log(a.join(" "))
+})()
+
+
+//c)Sum of all elements in an array
+//ANONYMOUS FUNCTION
+var a=[1,2,3,4,5]
+var b=function(){
+    var c=0
+    for(var i=0;i<a.length;i++){
+        c=c+a[i]
+    }
+    return c
+}
+console.log(b())
+
+//IIFE
+(function(){
+    var a=[1,2,3,4,5]
+    var c=0
+    for(var i=0;i<a.length;i++){
+        c=c+a[i]
+    }
+    console.log(c)
+})()
+
+//Return Prime Numbers in an array
+//ANONYMOUS FUNCTION
+var sum =function(a){
+    var  res="";
+    for(i=0;i<a.length;i++)
+    {
+        var count=0;
+        for(j=1;j<=a[i];j++)
+        {
+            if(a[i]%j===0)
+            {
+                count++
+            }
+        }
+        if(count==2)
+        {
+            res+=a[i]+" "
+        }
+    }
+    return res;
+ 
+}
+console.log(sum([1,2,3,4,5,6,7,8,9,11]))
+
+//IIFE
+(function(a){
+    var  res="";
+    for(i=0;i<a.length;i++)
+    {
+        var count=0;
+        for(j=1;j<=a[i];j++)
+        {
+            if(a[i]%j===0)
+            {
+                count++
+            }
+        }
+        if(count==2)
+        {
+            res+=a[i]+" "
+        }
+    }
+    console.log(res);
+ 
+})([1,2,3,4,5,6,7,8,9,11]);
+
+
+//e)Return all the palindromes in an array
+//ANONYMOUS FUNCTION
+var a=["ada","cool","hot","car"]
+var b=function(){
+  var c=[]
+  for(var i=0;i<a.length;i++){
+    if((a[i])){
+      c.push(a[i])
+    }
+    return c
+  }
+}
+console.log(b())
+
+//IIFE
+(function(){
+    var a=["ada","cool","hot","car"]
+    var c=[]
+    for(var i=0;i<a.length;i++){
+      if((a[i])){
+       c.push(a[i])
+      }
+    console.log(c)
+    }
+  })()
+
+  //f)Remove median of two sorted array of same size
+  //ANONYMOUS FUNCTION
+  var a = function (array1, array2) {
+    let arr = [...array1, ...array2]
+    arr.sort(function (a, b) { return a - b });
+    console.log(arr)
+    if (arr.length % 2 === 0) {
+        let median = (arr[(arr.length / 2) - 1] + arr[(arr.length / 2)]) / 2
+        console.log(median)
+    }
+    else {
+        let median = arr[arr.length / 2]
+        console.log(a())
+    }
+}
+a([1, 12, 15, 26], [2, 13, 17, 30])
+ 
+//IIFE
+(function (array1, array2) {
+    let arr = [...array1, ...array2]
+    arr.sort(function (a, b) { return a - b });
+    console.log(arr)
+    if (arr.length % 2 === 0) {
+        let median = (arr[(arr.length / 2) - 1] + arr[(arr.length / 2)]) / 2
+        console.log(median)
+    }
+    else {
+        let median = arr[arr.length / 2]
+        console.log(median)
+    }
+
+})([1, 12, 15, 26], [2, 13, 17, 30])
+
+
+//g)Remove duplicates from an array
+//ANONYMOUS FUNCTION
+var a = function (array) {
+    const mySet1 = new Set()
+    for (element in array) {
+        mySet1.add(array[element])
+    }
+    console.log(mySet1)
+ }
+ a([11, 12, 12, 12, 13, 13, 13, 15, 16, 16, 16, 17, 18, 19])
+
+ //IIFE
+ (function (array) {
+    const mySet1 = new Set()
+    for (element in array) {
+        mySet1.add(array[element])
+    }
+    console.log(mySet1)
+
+})([11, 12, 12, 12, 13, 13, 13, 15, 16, 16, 16, 17, 18, 19])
+
+
+//h)Rotate an array by k times
+//ANONYMOUS FUNCTION
+var a = function (array1, k) {
+    let rotatedarray = []
+
+    for (let i = 0; i < array1.length; i++) {
+        let newIndex = (i + k) % array1.length
+        rotatedarray[newIndex] = array1[i]
+    }
+    console.log(rotatedarray)
+}
+a([11, 12, 13, 14, 15, 16, 17], 2)
+
+//IIFE
+(function (array1, k) {
+    let rotatedarray = []
+
+    for (let i = 0; i < array1.length; i++) {
+        let newIndex = (i + k) % array1.length
+        rotatedarray[newIndex] = array1[i]
+    }
+    console.log(rotatedarray)
+
+
+})([11, 12, 13, 14, 15, 16, 17], 2) 
