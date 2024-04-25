@@ -1,0 +1,47 @@
+//2)Programs in ARROW FUNCTION
+//a)Print odd numbers in an array
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+var oddNumbers = numbers.filter(num => num % 2 !== 0);
+console.log( oddNumbers);
+
+//b)Convert all the strings to title caps in a string array
+var titleCase=()=>{
+    var c=["welcome to guvi"]
+    c=c[0].toLowerCase().split(" ")
+    for(var i=0;i<c.length;i++){
+      c[i]=c[i].charAt(0).toUpperCase()+c[i].slice(1)
+    }
+    return c.join(" ")
+  }
+  console.log(titleCase())
+
+  //c)Sum of all elements in an array
+  var a=()=>{
+    var b=[1,2,3,4,5]
+    var c=0
+    for(var i=0;i<b.length;i++){
+      c=c+(b[i])
+    }
+    return c
+  }
+  console.log(a())
+
+  //Return all prime numbers in an array
+  const isPrime = num => {
+    if (num < 2) {
+      return false;
+    }
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  };
+  const findPrimes = arr => arr.filter(num => isPrime(num));
+  const inputArray = [2, 3, 5, 7, 10, 11, 13, 17];
+  const primeNumbers = findPrimes(inputArray);
+  console.log( primeNumbers);
+
+
+
